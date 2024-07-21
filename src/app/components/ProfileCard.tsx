@@ -1,13 +1,32 @@
 import React from 'react'
 import Image from 'next/image'
 
-export default function ProfileCard() {
+interface UserProfile {
+    login: string
+    avatar_url: string
+    name: string
+    bio: string
+    public_repos: number
+    followers: number
+    following: number
+    location: string
+    blog: string
+    twitter_username: string
+    company: string
+}
+
+interface ProfileCardProps {
+    userProfile: UserProfile | null
+}
+
+export default function ProfileCard({ userProfile }: ProfileCardProps) {
+    if (!userProfile) return null
     return (
         <div className=" p-8 rounded-lg shadow-md w-80md:w-[570px] lg:w-[730px] bg-[#FEFEFE]  dark:bg-[#1E2A47]">
             <div className="flex gap-6 items-start">
                 <div className="flex-shrink-0">
                     <Image
-                        src={'/assets/favicon-32x32.png'}
+                        src={userProfile.avatar_url}
                         alt='user avatar'
                         width={117}
                         height={117}
