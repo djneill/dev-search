@@ -18,16 +18,48 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+h1 {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 38px;
+}
+
+h2 {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 33px;
+}
+
+h3 {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h4 {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+p {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
 }
