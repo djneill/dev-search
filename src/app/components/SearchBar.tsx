@@ -4,9 +4,10 @@ import Image from 'next/image'
 
 interface SearchBarProps {
     onSearch: (searchTerm: string) => void
+    noResults: boolean
 }
 
-export default function SearchBar({ onSearch }: SearchBarProps) {
+export default function SearchBar({ onSearch, noResults }: SearchBarProps) {
     const [searchTerm, setSearchTerm] = useState('')
 
     const handleSearch = (e: React.FormEvent) => {
@@ -20,7 +21,7 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
         }
     }
     return (
-        <div className='flex justify-center items-center dark:bg-[#1E2A47] shadow-md rounded-lg h-16 w-80 md:w-[570px] lg:w-[730px]'>
+        <div className='relative flex justify-center items-center dark:bg-[#1E2A47] shadow-md rounded-lg h-16 w-80 md:w-[570px] lg:w-[730px]'>
             <div className="flex items-center px-4">
                 <Image
                     src={'/assets/icon-search.svg'}
@@ -38,6 +39,9 @@ export default function SearchBar({ onSearch }: SearchBarProps) {
                 placeholder='Search GitHub username...'
                 className='flex-grow px-4 py-2 bg-transparent outline-none w-full'
             />
+            {noResults && (
+                <p className='absolute right-28 text-red-500'>No results</p>
+            )}
             <button
                 className='bg-[#0079FF] text-white py-2 px-4 rounded-lg mr-2'
                 onClick={handleSearch}
