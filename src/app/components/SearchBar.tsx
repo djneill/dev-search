@@ -22,13 +22,13 @@ export default function SearchBar({ onSearch, noResults }: SearchBarProps) {
     }
     return (
         <div className='relative flex justify-center items-center dark:bg-[#1E2A47] shadow-md rounded-lg h-16 w-80 md:w-[570px] lg:w-[730px]'>
-            <div className="flex items-center px-4">
+            <div className="flex items-center pl-8">
                 <Image
                     src={'/assets/icon-search.svg'}
                     alt='search icon'
                     width={24}
                     height={24}
-                    className='w-6 h-6'
+                    className=''
                 />
             </div>
             <input
@@ -43,7 +43,7 @@ export default function SearchBar({ onSearch, noResults }: SearchBarProps) {
                 <p className='absolute right-28 text-red-500'>No results</p>
             )}
             <button
-                className='bg-[#0079FF] text-white py-2 px-4 rounded-lg mr-2'
+                className='bg-[#0079FF] hover:bg-[#60ABFF] text-white py-2 px-4 rounded-lg mr-2'
                 onClick={handleSearch}
             >
                 Search

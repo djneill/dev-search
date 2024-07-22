@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { spaceMono } from '@/app/lib/font'
 
 export default function Header() {
-    const [theme, setTheme] = useState('light'); // Default to 'light' for server-side rendering
+    const [theme, setTheme] = useState('light') // Default to 'light' for server-side rendering
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -36,8 +36,8 @@ export default function Header() {
     return (
         <div className='flex justify-between container items-center w-80 md:w-[570px] lg:w-[730px]'>
             <h1 className={`${spaceMono.className}`}>devfinder</h1>
-            <div id="theme-selector" className="flex justify-center items-center cursor-pointer">
-                <h3 onClick={toggleTheme} className={`uppercase mr-4 ${theme === 'dark' ? 'text-[#FFFFFF]' : 'text-[#4B6A9B]'}`}>
+            <div id="theme-selector" className="flex justify-center items-center cursor-pointer hover:text-[#90A4D4] dark:hover:text-black ">
+                <h3 onClick={toggleTheme} className={`uppercase mr-4 ${theme === 'dark' ? 'text-[#FFFFFF] hover:text-[#90A4D4]' : 'text-[#4B6A9B] hover:text-black'}`}>
                     {theme === 'dark' ? 'light' : 'dark'}
                 </h3>
                 <Image
@@ -45,7 +45,7 @@ export default function Header() {
                     alt="Theme Icon"
                     width={16}
                     height={16}
-                    className='cursor-pointer'
+                    className={`cursor-pointer transition duration-300 ${theme === 'dark' ? 'hover:filter hover:brightness-110' : 'hover:filter hover:brightness-75'}`}
                     onClick={toggleTheme}
                 />
             </div>
