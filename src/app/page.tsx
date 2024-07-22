@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react'
 import Image from "next/image"
 import Header from '@/app/components/Header'
 import SearchBar from "@/app/components/SearchBar"
-import ProfileCard from "./components/ProfileCard";
+import ProfileCard from "./components/ProfileCard"
+import Test from './components/Mobile'
 
 interface UserProfile {
   login: string
@@ -63,13 +64,16 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col items-center py-10 justify-center">
-      <main className="flex flex-col items-center justify-center px-4 w-80 md:w-[570px] lg:w-[730px]">
+      <main className="flex flex-col items-center justify-center px-4 w-320 md:w-[570px] lg:w-[730px]">
         <Header />
-        <div className="mt-8">
+        <div className="mt-4 md:mt-8">
           <SearchBar onSearch={fetchUserData} noResults={noResults} />
         </div>
-        <div className="mt-8">
+        <div className="hidden lg:flex mt-8">
           <ProfileCard userProfile={userProfile} />
+        </div>
+        <div className="mt-4 md:mt-8 lg:hidden">
+          <Test userProfile={userProfile} />
         </div>
       </main>
     </div >

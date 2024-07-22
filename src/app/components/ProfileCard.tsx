@@ -31,7 +31,7 @@ export default function ProfileCard({ userProfile }: ProfileCardProps) {
 
     return (
         <div className="p-8 rounded-lg shadow-md w-80 md:w-[570px] lg:w-[730px] bg-[#FEFEFE] dark:bg-[#1E2A47]">
-            <div className="flex gap-4 md:gap-6 items-start">
+            <div className="flex gap-6 items-start">
                 <div className="flex-shrink-0">
                     <Image
                         src={userProfile.avatar_url}
@@ -42,11 +42,11 @@ export default function ProfileCard({ userProfile }: ProfileCardProps) {
                     />
                 </div>
                 <div className="flex flex-col justify-start w-full">
-                    <div className="flex justify-between items-center mb-2">
-                        <h2 className="text-2xl font-bold">{userProfile.name}</h2>
+                    <div className="flex md:flex-col md:justify-start lg:flex-row lg:items-center lg:justify-between  mb-2">
+                        <h2 className="text-2xl font-bold md:mb-2">{userProfile.name}</h2>
                         <p>Joined {new Date(userProfile.created_at).toLocaleDateString()}</p>
                     </div>
-                    <p className='text-[#0079FF] mb-4'><a href={userProfile.html_url} target='_blank'>@{userProfile.login}</a></p>
+                    <p className='text-[#0079FF] mb-4 md:w-full'><a href={userProfile.html_url} target='_blank'>@{userProfile.login}</a></p>
                     <p className="mt-6 md:mt-0">{userProfile.bio || 'This profile has no bio'}</p>
                     <div className="grid grid-cols-3 gap-4 p-4 bg-[#F6F8FF] dark:bg-[#141D2F] rounded-lg text-center mt-6 mb-4">
                         <div className="text-center">

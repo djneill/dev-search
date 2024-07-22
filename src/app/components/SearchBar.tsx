@@ -21,7 +21,7 @@ export default function SearchBar({ onSearch, noResults }: SearchBarProps) {
         }
     }
     return (
-        <div className='relative flex justify-center items-center dark:bg-[#1E2A47] shadow-md rounded-lg h-16 w-80 md:w-[570px] lg:w-[730px]'>
+        <div className='relative flex justify-center items-center dark:bg-[#1E2A47] shadow-md rounded-lg h-16 w-320 md:w-[570px] lg:w-[730px]'>
             <div className="flex items-center pl-8">
                 <Image
                     src={'/assets/icon-search.svg'}
