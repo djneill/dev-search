@@ -14,6 +14,7 @@ interface UserProfile {
     twitter_username: string
     company: string
     created_at: string
+    html_url: string
 }
 
 interface ProfileCardProps {
@@ -30,7 +31,7 @@ export default function ProfileCard({ userProfile }: ProfileCardProps) {
 
     return (
         <div className="p-8 rounded-lg shadow-md w-80 md:w-[570px] lg:w-[730px] bg-[#FEFEFE] dark:bg-[#1E2A47]">
-            <div className="flex gap-6 items-start">
+            <div className="flex gap-4 md:gap-6 items-start">
                 <div className="flex-shrink-0">
                     <Image
                         src={userProfile.avatar_url}
@@ -45,7 +46,7 @@ export default function ProfileCard({ userProfile }: ProfileCardProps) {
                         <h2 className="text-2xl font-bold">{userProfile.name}</h2>
                         <p>Joined {new Date(userProfile.created_at).toLocaleDateString()}</p>
                     </div>
-                    <p className='text-[#0079FF] mb-4'>@{userProfile.login}</p>
+                    <p className='text-[#0079FF] mb-4'><a href={userProfile.html_url} target='_blank'>@{userProfile.login}</a></p>
                     <p className="mt-6 md:mt-0">{userProfile.bio || 'This profile has no bio'}</p>
                     <div className="grid grid-cols-3 gap-4 p-4 bg-[#F6F8FF] dark:bg-[#141D2F] rounded-lg text-center mt-6 mb-4">
                         <div className="text-center">
@@ -83,7 +84,7 @@ export default function ProfileCard({ userProfile }: ProfileCardProps) {
                                 className="mr-4"
                             />
                             <p className={userProfile.twitter_username ? '' : 'text-[#979797]'}>
-                                {userProfile.twitter_username ? `@${userProfile.twitter_username}` : 'Not Available'}
+                                {userProfile.twitter_username ? <a href={`https://twitter.com/${userProfile.twitter_username}`} target='_blank'>@{userProfile.twitter_username}</a> : 'Not Available'}
                             </p>
                         </div>
                         <div className="flex items-center mb-4">
@@ -95,7 +96,7 @@ export default function ProfileCard({ userProfile }: ProfileCardProps) {
                                 className="mr-4"
                             />
                             <p className={userProfile.blog ? '' : 'text-[#979797]'}>
-                                {userProfile.blog ? <a href={userProfile.blog}>{shortenUrl(userProfile.blog)}</a> : 'Not Available'}
+                                {userProfile.blog ? <a href={userProfile.blog} target='_blank'>{shortenUrl(userProfile.blog)}</a> : 'Not Available'}
                             </p>
                         </div>
                         <div className="flex items-center mb-4">

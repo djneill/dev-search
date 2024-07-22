@@ -18,6 +18,7 @@ interface UserProfile {
   twitter_username: string
   company: string
   created_at: string
+  html_url: string
 }
 
 
@@ -51,7 +52,8 @@ export default function Home() {
         blog: data.blog,
         twitter_username: data.twitter_username,
         company: data.company,
-        created_at: data.created_at
+        created_at: data.created_at,
+        html_url: data.html_url
       })
     } catch (error) {
       setNoResults(true)
