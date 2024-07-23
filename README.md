@@ -11,8 +11,8 @@ Responsive Design: The application is designed to work across different devices 
 Light and Dark Theme: Toggle between light and dark modes to suit your preference.
 
 ## Technologies Used
-React: JavaScript library for building user interfaces.
-Next.js: React framework with server-side rendering and static site generation.
-TypeScript: Superset of JavaScript that adds static typing.
-GitHub API: API used to fetch GitHub user data.
-Tailwind CSS: Utility-first CSS framework for styling.
+- React: JavaScript library for building user interfaces.
+- Next.js: React framework with server-side rendering and static site generation.
+- TypeScript: Superset of JavaScript that adds static typing.
+- GitHub API: API used to fetch GitHub user data.
+- Tailwind CSS: Utility-first CSS framework for styling.
